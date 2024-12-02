@@ -27,4 +27,4 @@ jobs:
       - name: Pull Image from Docker Hub
         run: sudo docker pull ecommerce584956/node-app:latest
       - name: Run Docker Container
-        run: docker run -d -p 8000:8000  -e MONGO_URI=${{ secrets.MONGOURL }}  --name node-app-container ecommerce584956/node-app
+        run: docker run -d -p 8000:8000  --name node-app-container ecommerce584956/node-app
