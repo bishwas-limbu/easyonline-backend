@@ -27,7 +27,7 @@ jobs:
       - name: Pull Image from Docker Hub
         run: docker pull ecommerce584956/node-app:latest
       - name: Run Docker Container
-        run: |
+        run: 
           docker run -d -p 8000:8000 --name node-app-container \
             -e PORT=${{ secrets.PORT }} \
             -e MONGO_URI=${{ secrets.MONGOURL }} \
