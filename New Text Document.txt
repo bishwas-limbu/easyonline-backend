@@ -1,0 +1,50 @@
+limbisu aDM73aQr84THOAo3
+
+
+Install your driver
+npm install mongodb
+
+mongo db uri mongodb+srv://limbisu:aDM73aQr84THOAo3@cluster1.6zn1d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1
+
+
+bishwas zNwRmyeXqYh2OUcE
+
+    "email": "admin@login.com",
+    "password": "Password1@",
+
+
+    "email": "normal@login.com",
+    "password": "Password1@",
+
+---------------------------------
+
+ required: [true, 'Image URL is required'],
+
+
+        [
+            body('title').notEmpty().withMessage('Title is required'),
+            body('description').notEmpty().withMessage('Description is required'),
+            body('brand').optional().isString().trim(),
+            body('price').isNumeric().withMessage('Price must be a number').isFloat({ gt: 0 }).withMessage('Price must be greater than zero'),
+            body('category').isMongoId().withMessage('Valid category ID is required'),
+            body('countInStock').isNumeric().withMessage('Count in stock must be a number').isInt({ gt: -1 }).withMessage('Count in stock cannot be negative'),
+            body('isFeatured').optional().isBoolean(),
+        ]
+
+-----------------bucket policy ----------------
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1731371064728",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:DeleteObject",
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::eassyonlinebazzar-bucket/*"
+        }
+    ]
+}
