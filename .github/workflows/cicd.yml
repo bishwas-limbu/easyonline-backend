@@ -27,21 +27,4 @@ jobs:
       - name: Pull Image from Docker Hub
         run: sudo docker pull ecommerce584956/node-app:latest
       - name: Run Docker Container
-        run: sudo docker run -d -p 8000:8000 --name node-app-container 
-            -e PORT=${{ secrets.PORT }} 
-            -e MONGO_URI=${{ secrets.MONGOURL }} 
-            -e BUCKET_NAME=${{ secrets.BUCKETNAME }} 
-            -e BUCKET_REGION=${{ secrets.BUCKETREGION }} 
-            -e ACCESS_KEY=${{ secrets.ACCESSKEY }} 
-            -e SECRET_ACCESS_KEY=${{ secrets.SECRETACCESSKEY }} 
-            -e ADMIN_EMAIL=${{ secrets.ADMINLOGIN }} 
-            -e ADMIN_PASSWORD=${{ secrets.ADMINPASSWORD }} 
-            -e JSON_WEB_TOKEN_SECRET_KEY=${{ secrets.JSONWEBTOKENSECRETKEY }} 
-            -e EMAIL_SERVER_HOST=${{ secrets.EMAILSERVERHOST }} 
-            -e EMAIL_SERVER_PORT=${{ secrets.EMAILSERVERPORT }} 
-            -e EMAIL_SERVER_USER=${{ secrets.EMAILSERVERUSER }} 
-            -e EMAIL_SERVER_PASSWORD=${{ secrets.EMAILSERVERPASSWORD }} 
-            -e FROM_NAME=${{ secrets.FROMNAME }} 
-            -e FROM_EMAIL=${{ secrets.FROMEMAIL }} 
-            -e STRIPE_SECRET_KEY=${{ secrets.STRIPESECRETKEY }} 
-            ecommerce584956/node-app
+        run: sudo docker run -d -p 8000:8000 --name node-app-container -e PORT=${{ secrets.PORT }} -e MONGO_URI=${{ secrets.MONGOURL }} -e BUCKET_NAME=${{ secrets.BUCKETNAME }} -e BUCKET_REGION=${{ secrets.BUCKETREGION }} -e ACCESS_KEY=${{ secrets.ACCESSKEY }} -e SECRET_ACCESS_KEY=${{ secrets.SECRETACCESSKEY }} -e ADMIN_EMAIL=${{ secrets.ADMINLOGIN }} -e ADMIN_PASSWORD=${{ secrets.ADMINPASSWORD }} -e JSON_WEB_TOKEN_SECRET_KEY=${{ secrets.JSONWEBTOKENSECRETKEY }} -e EMAIL_SERVER_HOST=${{ secrets.EMAILSERVERHOST }} -e EMAIL_SERVER_PORT=${{ secrets.EMAILSERVERPORT }} -e EMAIL_SERVER_USER=${{ secrets.EMAILSERVERUSER }} -e EMAIL_SERVER_PASSWORD=${{ secrets.EMAILSERVERPASSWORD }} -e FROM_NAME=${{ secrets.FROMNAME }} -e FROM_EMAIL=${{ secrets.FROMEMAIL }} -e STRIPE_SECRET_KEY=${{ secrets.STRIPESECRETKEY }} ecommerce584956/node-app
