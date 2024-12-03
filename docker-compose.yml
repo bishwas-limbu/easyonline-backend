@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+    node-server:
+      stdin_open : true
+      build:
+        context:  .
+        dockerfile: Dockerfile
+      
+      expose:
+        - 9000
+      ports:
+        - "9000:9000"
+      environment:
+        - CHOKIDAR_USEPOLLING=true
+        
