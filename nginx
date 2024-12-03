@@ -1,0 +1,33 @@
+server {
+        listen 80;
+        listen [::]:80;
+        server_name easyonlinebazzar.online;
+
+        location / {
+                root /usr/share/nginx/html/front-app/dist;
+                try_files $uri $uri/ /index.html;
+        }
+        location /admin {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+#                proxy_pass http://172.17.0.3:5173;
+ #              proxy_set_header Host $host;
+  #             proxy_set_header X-Real-IP $remote_addr;
+#               try_files $uri $uri/ =404;
+                root /usr/share/nginx/html/admin-app/dist;
+                try_files $uri $uri/ /index.html;
+        }
+
+        location /api/v2 {
+                proxy_pass http://172.17.0.2:9000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+    }
+
+
+
+
+}
