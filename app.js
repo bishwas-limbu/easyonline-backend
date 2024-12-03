@@ -20,7 +20,8 @@ const app = express(); // initializing an Express application
 //const PORT = process.env.PORT || 4000;
 
 app.use(cors({
-    origin: ['http://localhost:5174','http://localhost:5173'],
+   // origin: ['http://localhost:5174','http://localhost:5173'],
+    origin: "*",
     methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'], // Add other HTTP methods if needed
     credentials: true  // Enable this if you need to send cookies or authorization headers
   }));
