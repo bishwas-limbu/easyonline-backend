@@ -6,11 +6,17 @@ services:
       build:
         context:  .
         dockerfile: Dockerfile
-      
+
       expose:
         - 9000
       ports:
         - "9000:9000"
       environment:
         - CHOKIDAR_USEPOLLING=true
-        
+
+      networks:
+         - my-bridge
+
+networks:
+  my-bridge:
+    driver: bridge

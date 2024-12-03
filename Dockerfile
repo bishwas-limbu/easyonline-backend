@@ -2,12 +2,12 @@ FROM node:alpine3.18
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package*.json ./
+COPY .env .env
+COPY . .
 
 RUN npm install
 
-COPY . .
-
 EXPOSE 9000
 
-CMD ["npm","run","start"]
+CMD ["npm","start"]
